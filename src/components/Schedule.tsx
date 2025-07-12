@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Student, Subject, Payment, Message, Report, ScheduleSlot, AppState } from '../types/index.js';
+import { Student, Subject, Payment, Report, ScheduleSlot, AppState } from '../types/index.js';
 
 interface ScheduleProps {
   onScheduleUpdate: (slots: ScheduleSlot[]) => void;
@@ -355,26 +355,26 @@ const Schedule: React.FC<ScheduleProps> = ({ onScheduleUpdate }) => {
     }));
   };
 
-  const rescheduleLesson = (lessonId: string, newDay: string, newTime: string) => {
-    // Check if the new slot is available
-    const existingSlot = appState.scheduleSlots.find(s =>
-      s.day === newDay && s.time === newTime && s.id !== lessonId
-    );
+  // const rescheduleLesson = (lessonId: string, newDay: string, newTime: string) => {
+  //   // Check if the new slot is available
+  //   const existingSlot = appState.scheduleSlots.find(s =>
+  //     s.day === newDay && s.time === newTime && s.id !== lessonId
+  //   );
     
-    if (existingSlot) {
-      alert('This time slot is already occupied');
-      return;
-    }
+  //   if (existingSlot) {
+  //     alert('This time slot is already occupied');
+  //     return;
+  //   }
 
-    setAppState(prev => ({
-      ...prev,
-      scheduleSlots: prev.scheduleSlots.map(slot =>
-        slot.id === lessonId
-          ? { ...slot, day: newDay, time: newTime }
-          : slot
-      )
-    }));
-  };
+  //   setAppState(prev => ({
+  //     ...prev,
+  //     scheduleSlots: prev.scheduleSlots.map(slot =>
+  //       slot.id === lessonId
+  //         ? { ...slot, day: newDay, time: newTime }
+  //         : slot
+  //     )
+  //   }));
+  // };
 
   const updateScheduleSlot = (id: string, updates: Partial<ScheduleSlot>) => {
     setAppState(prev => ({

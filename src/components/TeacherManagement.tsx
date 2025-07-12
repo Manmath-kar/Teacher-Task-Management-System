@@ -6,7 +6,7 @@ import Schedule from './Schedule.tsx';
 import { Teacher, Qualification, ScheduleSlot } from '../types/index.js';
 
 const TeacherManagement: React.FC = () => {
-  const [currentSchedule, setCurrentSchedule] = useState<ScheduleSlot[]>([]);
+  // const [currentSchedule, setCurrentSchedule] = useState<ScheduleSlot[]>([]);
   // Mock data
   const teacher: Teacher = {
     id: '1',
@@ -62,12 +62,12 @@ const TeacherManagement: React.FC = () => {
       { id: '7', day: 'Saturday', time: '2:30pm', status: 'Available', duration: 30, rate: 0 },
       { id: '8', day: 'Saturday', time: '3:00pm', status: 'Available', duration: 60, rate: 0 }
     ];
-    setCurrentSchedule(initialSchedule);
+    // setCurrentSchedule(initialSchedule);
   }, []);
 
-  const handleScheduleUpdate = (updatedSchedule: ScheduleSlot[]) => {
-    setCurrentSchedule(updatedSchedule);
-  };
+  // const handleScheduleUpdate = (updatedSchedule: ScheduleSlot[]) => {
+  //   // setCurrentSchedule(updatedSchedule);
+  // };
 
   return (
     <div className="flex h-screen bg-gray-50">
@@ -93,7 +93,7 @@ const TeacherManagement: React.FC = () => {
           </div>
           
           {/* Schedule */}
-          <Schedule onScheduleUpdate={handleScheduleUpdate} />
+          {/* <Schedule onScheduleUpdate={handleScheduleUpdate} /> */}
         </div>
       </div>
     </div>

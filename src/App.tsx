@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import TeacherManagement from './components/TeacherManagement.tsx'
 
 function App() {
